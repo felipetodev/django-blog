@@ -10,7 +10,7 @@ import { toast } from "sonner"
 export default function CreatePost() {
   return (
     <>
-      <section className="flex flex-col items-center justify-center h-full">
+      <section className="animate-fade-in-up flex flex-col items-center justify-center h-full">
         <h1 className="text-xl md:text-4xl text-primary font-semibold pb-4 md:pb-8">
           Create a new post
         </h1>

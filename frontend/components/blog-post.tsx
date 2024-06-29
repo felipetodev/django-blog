@@ -5,7 +5,7 @@ import { type Post } from "@/lib/types";
 
 export function BlogPost({ post }: { post: Post }) {
   return (
-    <section className="flex flex-col gap-y-12">
+    <section className="animate-fade-in-up flex flex-col gap-y-12">
       <nav>
         <Link href="/" className="flex items-center space-x-2 transition-opacity hover:opacity-75">
           <ArrowLeftIcon className="size-6" />

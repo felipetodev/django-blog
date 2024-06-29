@@ -4,7 +4,7 @@ import { type PostsEntries } from "@/lib/types"
 
 export function BlogPosts({ entries }: { entries: PostsEntries }) {
   return (
-    <div className="flex flex-col h-full">
+    <div className="animate-fade-in-up flex flex-col h-full">
       {entries.results.map((entry) => (
         <Link
           key={entry.id}
