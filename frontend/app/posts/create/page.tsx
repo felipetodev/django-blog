@@ -29,7 +29,7 @@ export default function CreatePost() {
 
             redirect(`/posts/${result.id}`)
           }}
-          className="w-full max-w-screen-md space-y-10"
+          className="w-full max-w-screen-md space-y-6 md:space-y-10"
         >
           <div className="grid w-full items-center gap-1.5">
             <label htmlFor="title" className="opacity-75">Title</label>

@@ -9,10 +9,10 @@ export function Header() {
       <nav className="flex justify-between w-full">
         <Link href="/" className="flex items-center">
           <h1 className="hidden md:flex text-primary text-2xl font-bold">
-            Blog App 🚀
+            GameInsec Blog 🕹️
           </h1>
           <h1 className="md:hidden text-primary text-xl font-bold">
-            Blog 🚀
+            G-Blog 🕹️
           </h1>
         </Link>
 

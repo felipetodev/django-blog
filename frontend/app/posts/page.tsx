@@ -20,8 +20,11 @@ export default async function Page({
 
   return (
     <>
-      <h1 className="text-4xl text-primary font-semibold py-10">
-        Hello Blog!
+      <h1 className="text-2xl md:text-4xl font-semibold py-10">
+        Reviews{' '}
+        <span className="text-base md:text-xl text-primary ">
+          Games / Entertainment
+        </span>
       </h1>
       <BlogPosts entries={blogEntries} />
     </>
