@@ -1,8 +1,8 @@
 "use client"
 
-import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
+import { SubmitButton } from "@/app/actions/submit-button"
 import { createPost } from "@/app/actions/create-post"
 import { redirect } from "next/navigation"
 import { toast } from "sonner"
@@ -16,6 +16,9 @@ export default function CreatePost() {
         </h1>
         <form
           action={async (form: FormData) => {
+            // simulate 0.5s of loading
+            await new Promise((resolve) => setTimeout(resolve, 500))
+
             const { success, message, result } = await createPost(form)
 
             if (!success || !result) {
@@ -44,9 +47,9 @@ export default function CreatePost() {
               className="min-h-[250px]"
             />
           </div>
-          <Button>
+          <SubmitButton>
             Create post
-          </Button>
+          </SubmitButton>
         </form>
       </section>
     </>
