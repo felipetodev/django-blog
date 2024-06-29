@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { createPost } from "@/app/actions/create-post"
 import { redirect } from "next/navigation"
+import { toast } from "sonner"
 
 export default function CreatePost() {
   return (
@@ -18,9 +19,10 @@ export default function CreatePost() {
             const { success, message, result } = await createPost(form)
 
             if (!success || !result) {
-              alert(message)
-              return
+              return toast.error(message)
             }
+
+            toast.success(message)
 
             redirect(`/posts/${result.id}`)
           }}

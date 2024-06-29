@@ -2,7 +2,8 @@
 
 import { API } from "@/lib/api";
 import { validatePost } from "@/lib/schemas";
-import { Post } from "@/lib/types";
+import { revalidatePath } from "next/cache";
+import { type Post } from "@/lib/types";
 
 interface ActionResponse {
   success: boolean
@@ -32,11 +33,11 @@ export async function createPost(form: FormData): Promise<ActionResponse> {
     }
   }
 
-  console.info("Post created successfully")
+  revalidatePath("/posts")
 
   return {
     success: true,
-    message: null,
+    message: `Post created successfully with id ${data.id}`,
     result: data
   }
 }
