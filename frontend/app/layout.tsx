@@ -10,7 +10,7 @@ const fontSans = FontSans({
 })
 
 export const metadata: Metadata = {
-  title: "Blog Django App",
+  title: "Django Blog | @felipeto",
   description: "A blog app built with Django and Next.js",
 };
 
@@ -20,15 +20,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html className="dark" lang="en" suppressHydrationWarning>
       <body
         className={cn(
-          "min-h-screen bg-background font-sans antialiased",
+          "min-h-screen font-sans antialiased bg-gradient-to-b from-background from-30% to-100% to-primary/10",
           fontSans.variable
         )}
       >
         <Header />
-        <main className="flex flex-col w-full h-[calc(100vh-60px)] px-8 md:px-10 overflow-y-auto">
+        <main className="flex flex-col w-full pt-[60px] h-screen px-8 md:px-14 lg:px-28 overflow-y-auto">
           {children}
         </main>
       </body>
