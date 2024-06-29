@@ -8,7 +8,7 @@ export function BlogPosts({ entries }: { entries: PostsEntries }) {
       {entries.results.map((entry) => (
         <Link
           key={entry.id}
-          href={`/post/${entry.id}`}
+          href={`/posts/${entry.id}`}
           className="flex flex-col p-4 border rounded mb-4 transition-colors hover:border-primary"
         >
           <h2 className="text-xl md:text-2xl font-semibold capitalize">
