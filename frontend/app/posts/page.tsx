@@ -8,7 +8,15 @@ export default async function Page({
     page?: string;
   };
 }) {
-  const blogEntries = await API.getPostsEntries(searchParams?.page ?? null);
+  const blogEntries = await API.getPostsEntries(searchParams?.page ?? undefined);
+
+  if ('error' in blogEntries) {
+    return <div className="grid place-content-center h-screen">
+      <h1 className="text-4xl font-semibold py-10">
+        [Error]: {blogEntries.error} 🚨
+      </h1>
+    </div>
+  }
 
   return (
     <>
