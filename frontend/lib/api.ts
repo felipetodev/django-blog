@@ -32,4 +32,18 @@ export class API {
       (data) => ({ ...data, createdAt: data.created_at })
     );
   }
+
+  static async createPost(data: Omit<Post, "id" | "createdAt">): Promise<Post | ErrorResponseType> {
+    return fetcher<Post>(
+      `${API_URL}/`,
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      },
+      (data) => ({ ...data, createdAt: data.created_at })
+    );
+  }
 }
