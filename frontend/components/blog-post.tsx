@@ -31,7 +31,7 @@ export function BlogPost({ post }: { post: Post }) {
             </span>
           </div>
         </div>
-        <span className="text-sm uppercase">14 de marzo de 2024</span>
+        <span className="text-sm uppercase opacity-50">14 de marzo de 2024</span>
       </div>
       <p>
         {post.content}
