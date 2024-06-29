@@ -22,3 +22,8 @@ export interface Post {
 }
 
 export type PostsEntries = Omit<FetchPostsResponse, 'results'> & { results: Post[] }
+
+export type ErrorResponseType = {
+  results: [];
+  error: string;
+}

@@ -1,8 +1,14 @@
 import { API_URL } from "@/lib/consts";
-import { type FetchPostsResponse, PostsEntries } from "./types";
+import { fetcher } from "@/lib/utils";
+import type {
+  FetchPostsResponse,
+  PostsEntries,
+  Post,
+  ErrorResponseType
+} from "@/lib/types";
 
 export class API {
-  static parsePost(data: FetchPostsResponse): PostsEntries {
+  private static parseList(data: FetchPostsResponse): PostsEntries {
     const parsedResults = data.results.map((post) => ({
       ...post,
       createdAt: post.created_at,
@@ -11,16 +17,19 @@ export class API {
     return { ...data, results: parsedResults };
   }
 
-  static async getPostsEntries(page: string | null): Promise<PostsEntries> {
-    const resp = await fetch(
-      `${API_URL}${page ? `?page=${page}` : ''}`
+  static async getPostsEntries(page?: string): Promise<PostsEntries | ErrorResponseType> {
+    return fetcher<PostsEntries>(
+      `${API_URL}/${page ? `?page=${page}` : ''}`,
+      { cache: 'no-store' },
+      this.parseList
     );
+  }
 
-    if (!resp.ok) {
-      throw new Error('Failed to fetch data')
-    }
-
-    const data = this.parsePost(await resp.json());
-    return data;
+  static async getPostById(id: string): Promise<Post | ErrorResponseType> {
+    return fetcher<Post>(
+      `${API_URL}/${id}/`,
+      undefined,
+      (data) => ({ ...data, createdAt: data.created_at })
+    );
   }
 }
