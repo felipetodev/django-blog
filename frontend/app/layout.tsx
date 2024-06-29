@@ -28,7 +28,7 @@ export default function RootLayout({
         )}
       >
         <Header />
-        <main className="grid place-content-center w-full h-[calc(100vh-60px)] px-8 md:px-10">
+        <main className="flex flex-col w-full h-[calc(100vh-60px)] px-8 md:px-10 overflow-y-auto">
           {children}
         </main>
       </body>
