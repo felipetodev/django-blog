@@ -1,7 +1,9 @@
 import Link from "next/link"
 import { PlusCircledIcon } from "@radix-ui/react-icons"
+import { ThemToggle } from "@/components/theme-toggle"
 import { buttonVariants } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
+import { GitHubIcon } from "./ui/icons"
 
 export function Header() {
   return (
@@ -16,20 +18,21 @@ export function Header() {
           </h1>
         </Link>
 
-        <div className="space-x-2">
-          <Link href="/posts/create" className={cn(buttonVariants())}>
-            <span className="hidden md:flex">Create new post</span>
-            <span className="md:hidden">New</span>
-            <PlusCircledIcon className="ml-2" />
-          </Link>
+        <div className="flex items-center space-x-2">
+          <ThemToggle />
           <a
             href="https://github.com/felipetodev/django-blog"
             target="_blank"
             rel="noopener noreferrer"
-            className={cn(buttonVariants({ variant: "secondary" }))}
+            className={cn(buttonVariants({ variant: "outline", size: "icon" }))}
           >
-            GitHub
+            <GitHubIcon className="size-5" />
           </a>
+          <Link href="/posts/create" className={cn(buttonVariants())}>
+            <span className="hidden md:flex font-semibold">Create new post</span>
+            <span className="md:hidden">New</span>
+            <PlusCircledIcon className="ml-2 size-4" />
+          </Link>
         </div>
       </nav>
     </header>

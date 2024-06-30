@@ -32,15 +32,15 @@ export default function CreatePost() {
           className="w-full max-w-screen-md space-y-6 md:space-y-10"
         >
           <div className="grid w-full items-center gap-1.5">
-            <label htmlFor="title" className="opacity-75">Title</label>
+            <label htmlFor="title" className="opacity-75 font-bold">Title</label>
             <Input name="title" id="title" placeholder="New post title" />
           </div>
           <div className="grid w-full items-center gap-1.5">
-            <label htmlFor="author" className="opacity-75">Author</label>
+            <label htmlFor="author" className="opacity-75 font-bold">Author</label>
             <Input name="author" id="author" placeholder="@author" />
           </div>
           <div className="grid w-full items-center gap-1.5">
-            <label htmlFor="content" className="opacity-75">Content</label>
+            <label htmlFor="content" className="opacity-75 font-bold">Content</label>
             <Textarea
               name="content"
               id="content"
