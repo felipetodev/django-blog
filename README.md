@@ -13,6 +13,7 @@ https://github.com/felipetodev/django-blog/assets/69825873/4edfcb1f-1178-446a-9a
 - [**Typescript**](https://www.typescriptlang.org/) - JavaScript with syntax for types.
 - [**Tailwindcss**](https://tailwindcss.com/) - A utility-first CSS framework for rapidly building custom designs.
 - [**shadcn/ui**](https://ui.shadcn.com/) - Customizable design system components.
+- [**Zod**](https://zod.dev/) - TypeScript-first schema validation with static type inference.
 
 ## 🚀 Getting Started
 
@@ -75,6 +76,7 @@ npm run dev
 - [x] Redirects
 - [x] Server Actions
 - [x] Error Handling
+- [x] Form Validation
 
 ## 📝 License
 
