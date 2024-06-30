@@ -26,12 +26,19 @@ git clone https://github.com/felipetodev/django-blog.git
 
 2. Install dependencies:
 
-```bash
 # Django
+
 cd backend
+
+python -m venv venv
+# activate the virtual environment
+source venv/bin/activate or venv\Scripts\activate
+# install the dependencies in the virtual environment
+cd backend/blog_project
 pip install -r requirements.txt
 
 # Next.js
+
 cd frontend
 npm install
 ```
@@ -41,8 +48,8 @@ npm install
 ```bash
 # Django
 cd backend/blog_project
-python manage.py makemigrations blog
-python manage.py migrate
+# python manage.py makemigrations blog
+# python manage.py migrate
 python manage.py runserver
 
 # Next.js
