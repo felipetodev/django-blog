@@ -1,6 +1,7 @@
 # Fullstack Blog App
 
 Django + Next.js Blog App ✨
+
 https://github.com/felipetodev/django-blog/assets/69825873/4edfcb1f-1178-446a-9ae3-0f3958570d79
 
 ## 🛠️ Stack
