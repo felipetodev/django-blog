@@ -62,6 +62,13 @@ npm run dev
 
 4. You can access the Django API at `http://localhost:8000/api/posts/` and the Next.js app at `http://localhost:3000/`.
 
+**Django administration:**
+
+Access the Django administration at `http://localhost:8000/admin/`:
+
+- username: admin
+- password: admin
+
 ## Features
 
 - [x] Create, Read, Update, Delete Posts (API)
